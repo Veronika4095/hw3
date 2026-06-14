@@ -16,3 +16,19 @@ build_reporter() {
 run_reporter() {
     docker run --rm -v $(pwd)/data:/data reporter
 }
+
+structure() {
+    find . -not -path "*/\.*" | sort
+}
+
+clear_data() {
+    rm -rf data/*.csv data/*.html 2>/dev/null || true
+}
+
+inside_generator() {
+    docker run --rm -v $(pwd)/data:/data generator ls -la /data
+}
+
+inside_reporter() {
+    docker run --rm -v $(pwd)/data:/data reporter ls -la /data
+}
