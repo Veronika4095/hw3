@@ -22,3 +22,7 @@ Docker проект: генератор и аналитик данных
 - ./run.sh clear_data — очистить папку data
 - ./run.sh inside_generator — посмотреть содержимое папки data изнутри контейнера генератора
 - ./run.sh inside_reporter — посмотреть содержимое папки data изнутри контейнера аналитика
+  
+5. Запустить веб-сервер для отчета:
+   ./run.sh report_server
+   Открой в браузере http://localhost:8080/report.html
