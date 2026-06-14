@@ -32,3 +32,8 @@ inside_generator() {
 inside_reporter() {
     docker run --rm -v $(pwd)/data:/data reporter ls -la /data
 }
+
+report_server() {
+    docker run --rm -d -p 8080:80 -v $(pwd)/data:/usr/share/nginx/html:ro nginx
+}
+
